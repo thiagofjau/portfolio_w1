@@ -246,7 +246,6 @@ footer {
         width: 40px;
 
     }
-
     50% {
         height: 58px;
         width: 58px;
@@ -282,7 +281,7 @@ footer {
 }
 .fa-linkedin {
 
-    background: #505050;
+    background: #505050e1;
     color: white;
     font-size: x-large;
     border-radius: 50%;
