@@ -242,8 +242,7 @@ footer {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: 3fr;
-        
-        max-width: 100px;
+        min-width: 50px;
         gap: 15px;
     }
 
