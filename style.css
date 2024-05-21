@@ -231,7 +231,7 @@ footer {
         background-color: white;
         padding: 40px;
     }
-.teste{asasasasasa}
+
     .menu {
         width: 100%;
         justify-content: center;
@@ -242,7 +242,8 @@ footer {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         grid-template-rows: 3fr;
-        min-width: 450px;
+        
+        max-width: 100px;
         gap: 15px;
     }
 
