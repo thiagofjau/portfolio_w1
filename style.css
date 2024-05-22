@@ -65,8 +65,10 @@ body {
 }
 
 .navbar a:hover
-/* , .navbar a.active  */ /**/
-{
+
+/* , .navbar a.active  */
+/**/
+    {
     color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
 }
@@ -113,7 +115,7 @@ span {
 }
 
 .home-content h1 {
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 700;
     margin-top: 1.5rem;
     line-height: 1;
@@ -168,6 +170,7 @@ span {
     transform: scale(1.1)translateY(-5px);
     box-shadow: 0 0 25px var(--main-color);
     background-color: var(--main-color);
+    color: black;
 }
 
 .btn {
@@ -294,7 +297,7 @@ span {
 }
 
 .heading {
-    font-size: 8rem;
+    font-size: 5rem;
     text-align: center;
     margin: 5rem 0;
 }
@@ -501,7 +504,7 @@ span {
     background: rgba(0, 0, 0, 0.7);
     border: 3px solid rgba(238, 238, 238, 0.2);
     border-radius: 2rem;
-    padding: 30px 60px;
+    padding: 15px 25px;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -550,16 +553,18 @@ span {
     text-align: center;
 }
 
-.contact form .input-box {
+.contact form {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
 .contact form .input-box input,
 .contact form textarea {
     width: 100%;
-    padding: 2.5rem;
+    padding: 1.5rem;
     font-size: 1.8rem;
     color: var(--text-color);
     background: var(--bg-color);
@@ -618,23 +623,139 @@ span {
     margin-bottom: 0;
     text-align: center;
 }
-.footer ul li a{
+
+.footer ul li a {
     color: white;
     border-bottom: 3px solid transparent;
     transition: 0.3s ease-in-out;
 }
-.footer ul li a:hover{
+
+.footer ul li a:hover {
     border-bottom: 3px solid var(--main-color);
     color: var(--main-color);
 
 }
-.footer ul li{
+
+.footer ul li {
     display: inline-block;
     padding: 0 15px;
 }
-.footer .copyright{ 
+
+.footer .copyright {
     margin-top: 50px;
     text-align: center;
     font-size: 16px;
     color: white;
+}
+
+/*responsive tablet*/
+@media(max-width:1185px) {
+    html {
+        font-size: 45%;
+    }
+
+    .projects-container {
+        padding-bottom: 6rem;
+        grid-template-columns: repeat(2, 1fr);
+        margin: 0 4rem;
+    }
+    .testimonials .wrapper{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+/*responsive tablet mini*/
+@media(max-width: 991px) {
+    header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .timeline-items::before {
+        left: 7px;
+    }
+
+    .timeline-item:nth-child(odd){
+        padding-right: 0;
+        text-align: left;
+    }
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        padding-left: 37px;
+    }
+    .timeline-dot{
+        left: 0;
+    }
+    .projects{
+        padding-bottom: 7rem;
+    }
+    .testimonials .wrapper{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .contact form{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer{
+        padding: 2rem 3%;
+    }
+}
+
+@media(max-width: 895px){
+    #menu-icon{
+        display: block;
+    }
+    .navbar{
+        position: absolute;
+        height: 100vh;
+        top: 100%;
+        right: 0;
+        width: 50%;
+        padding: 1rem 3%;
+        background: rgba(0, 0, 0, 0.38);
+        backdrop-filter: blur(20);
+        border-bottom-left-radius: 2rem;
+        border-left: 2px solid var(--main-color);
+        border-bottom: 2px solid var(--main-color);
+        display: none;
+    }
+    .navbar.active{
+        display: block;
+    }
+    .navbar a{
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+        color: white;
+    }
+    .home{
+        flex-direction: column-reverse;
+        margin: 5rem 4rem;
+    }
+    .home-content h3{
+        font-size: 2.6rem;
+    }
+    .home-content h1{
+        font-size: 8rem;
+        margin-top: 3rem;
+    }
+    .home-content p{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .home-img img{
+        width: 56vw;
+        opacity: .8;
+    }
+    .projects h2{
+        margin-bottom: 3rem;
+    }
+    .projects-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
 }
