@@ -144,7 +144,9 @@ span {
 }
 
 .home-content p {
-    font-size: 1.5rem;
+    display: block;
+    text-align: justify;
+    font-size: 1.8rem;
     font-weight: 500;
     line-height: 1.8;
     max-width: 1000px;
@@ -734,16 +736,18 @@ span {
     }
     .home{
         flex-direction: column-reverse;
-        margin: 5rem 4rem;
+        margin: 3rem 2rem;
+        gap: 5rem;
     }
     .home-content h3{
         font-size: 2.6rem;
     }
     .home-content h1{
         font-size: 8rem;
-        margin-top: 3rem;
+        margin-top: 2rem;
     }
     .home-content p{
+        font-size: 1.6rem;
         max-width: 600px;
         margin: 0 auto;
     }
@@ -756,6 +760,18 @@ span {
     }
     .projects-container{
         grid-template-columns: repeat(1, 1fr);
+    }
+    .education{
+        margin-top: -70px;
+    }
+    .projects{
+        margin-top: -120px;
+    }
+    .testimonials{
+        margin-top: -120px;
+    }
+    .contact{
+        margin-top: -50px;
     }
 
 }
