@@ -13,6 +13,18 @@
     --second-bg-color: #131313;
     --text-color: white;
     --main-color: #00ffee;
+    --box-shadow: var(--main-color);
+    --nav-color: rgba(0, 0, 0, 0.822);
+}
+
+/*DAY THEME*/
+.day-theme:root {
+    --bg-color: #ffffff;
+    --second-bg-color: #f1f1f1;
+    --text-color: #272727;
+    --main-color: #00353b;
+    --box-shadow: var(--main-color) transparent;
+    --nav-color: rgba(255, 255, 255, 0.822);
 }
 
 html {
@@ -30,9 +42,11 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 4rem 12% 4rem;
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(10px);
+    /* padding: 4rem 12% 4rem; header */ 
+    padding: 2rem 7% 2rem;
+    background: var(--nav-color);
+    /*menu bar transparent*/
+    backdrop-filter: blur(4px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,13 +69,18 @@ body {
     text-shadow: 0 0 25px var(--main-color);
 }
 
+.navbar{
+    display: flex;
+    align-items: center; /*center toggle with menus*/
+}
+
 .navbar a {
     font-size: 1.8rem;
     color: var(--text-color);
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
-    border-bottom: 3px solid transparent;
+    border-bottom: 2px solid transparent;
 }
 
 .navbar a:hover
@@ -70,7 +89,7 @@ body {
 /**/
     {
     color: var(--main-color);
-    border-bottom: 3px solid var(--main-color);
+    /* border-bottom: 3px solid var(--main-color); */
 }
 
 #menu-icon {
@@ -78,6 +97,76 @@ body {
     color: var(--main-color);
     display: none;
 }
+
+/*TOGGLE SLIDER*/
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    /*HIDE DEFAULT CHECKBOX*/
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-color);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    /*BALL SIZE*/
+    width: 26px;
+    left: 4px;
+    /*push ball from corner*/
+    bottom: 4px;
+    background-color: var(--bg-color);
+    /*BALL COLOR*/
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--main-color);
+    /*BAR COLOR*/
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--bg-color);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+    border-radius: 34px;
+    /*radius bar*/
+}
+
+.slider.round:before {
+    border-radius: 50%;
+    /*radius ball*/
+}
+
+/*END TOGGLE*/
 
 section {
     min-height: 100vh;
@@ -130,17 +219,17 @@ span {
     top: 3rem;
     width: 32vw;
     border-radius: 50%;
-    box-shadow: 0 0 25px var(--main-color);
+    box-shadow: 0 0 15px var(--box-shadow);
     cursor: pointer;
     transition: 0.4s ease-in-out;
-    opacity: 0.5;
 }
 
 .home-img img:hover {
-    box-shadow: 0 0 25px var(--main-color),
-        0 0 50px var(--main-color),
-        0 0 100px var(--main-color);
-    opacity: 1;
+    box-shadow: 0 0 25px var(--box-shadow),
+        0 0 50px var(--box-shadow),
+        0 0 100px var(--box-shadow);
+    transform: scale(1.02);
+    opacity: 0.8;
 }
 
 .home-content p {
@@ -172,17 +261,17 @@ span {
     transform: scale(1.1)translateY(-5px);
     box-shadow: 0 0 25px var(--main-color);
     background-color: var(--main-color);
-    color: black;
+    color: var(--bg-color);
 }
 
 .btn {
     display: inline-block;
     padding: 1rem 2.8rem;
     background: var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
+    box-shadow: 0 0 25px var(--box-shadow);
     border-radius: 4rem;
     font-size: 1.6rem;
-    color: black;
+    color: var(--bg-color);
     border: 2px solid transparent;
     letter-spacing: 0.1rem;
     font-weight: 600;
@@ -202,16 +291,16 @@ span {
 }
 
 .btn-group a:nth-of-type(2) {
-    background-color: black;
+    background-color: var(--bg-color);
     color: var(--main-color);
     border: 2px solid var(--main-color);
     box-shadow: 0 0 25px transparent;
 }
 
 .btn-group a:nth-of-type(2):hover {
-    box-shadow: 0 0 25px var(--main-color);
+    box-shadow: 0 0 25px var(--box-shadow);
     background-color: var(--main-color);
-    color: black;
+    color: var(--bg-color);
 }
 
 .text-animation {
@@ -236,7 +325,7 @@ span {
     position: absolute;
     width: calc(100% + 8px);
     height: 100%;
-    border-left: 3px solid var(--bg-color);
+    border-left: 2px solid var(--bg-color);
     right: -8px;
     animation: cursor 0.6s infinite, typing 20s steps(14) infinite;
 }
@@ -364,13 +453,13 @@ span {
 .timeline-date {
     font-size: 20px;
     font-weight: 800;
-    color: white;
+    color: --text-color;
     margin: 6px 0 15px;
 }
 
 .timeline-content {
     background-color: var(--bg-color);
-    border: 3px solid var(--main-color);
+    border: 2px solid var(--main-color);
     padding: 30px 50px;
     border-radius: 4rem;
     box-shadow: 0 0 10px var(--main-color);
@@ -385,13 +474,13 @@ span {
 
 .timeline-content h3 {
     font-size: 20px;
-    color: white;
+    color: --text-color;
     margin: 0 0 10px;
     font-weight: 500;
 }
 
 .timeline-content p {
-    color: white;
+    color: --text-color;
     font-size: 16px;
     font-weight: 300;
     line-height: 22px;
@@ -417,12 +506,12 @@ span {
 /*RESIZE SOCIAL ICON*/
 .projects {
     background-color: var(--bg-color);
-    color: black;
+    color: var(--bg-color);
 }
 
 .projects h2 {
     margin-bottom: 5rem;
-    color: white;
+    color: --text-color;
 }
 
 .projects-container {
@@ -436,14 +525,14 @@ span {
     background-color: var(--main-color);
     height: 300px;
     border-radius: 3rem;
-    border: 5px solid transparent;
+    border: 2px solid transparent;
     cursor: pointer;
     transition: 0.4s ease-in-out;
 }
 
 .project-box:hover {
-    background-color: white;
-    color: black;
+    background-color: --text-color;
+    color: var(--bg-color);
     border: 5px solid var(--main-color);
     transform: scale(1.03);
     box-shadow: 0 0 50px var(--main-color);
@@ -490,8 +579,8 @@ span {
 .testimonials-box img {
     width: 15rem;
     border-radius: 50%;
-    border: 3px solid var(--main-color);
-    box-shadow: 0 0 25px var(--main-color);
+    border: 1px solid var(--main-color);
+    box-shadow: 0 0 25px var(--box-shadow);
 }
 
 .wrapper {
@@ -503,8 +592,8 @@ span {
 .testimonial-item {
     min-height: 450px;
     min-width: 350px;
-    background: rgba(0, 0, 0, 0.7);
-    border: 3px solid rgba(238, 238, 238, 0.2);
+    background: var(--second-bg-color);
+    border: 2px solid var(--main-color);
     border-radius: 2rem;
     padding: 15px 25px;
     cursor: pointer;
@@ -514,7 +603,7 @@ span {
     justify-content: center;
     text-align: center;
     gap: 1.5rem;
-    color: white;
+    color: --text-color;
     transition: 0.4s ease-in-out;
 }
 
@@ -543,7 +632,7 @@ span {
 
 .contact h2 {
     margin-bottom: 3rem;
-    color: white;
+    color: --text-color;
 }
 
 .contact-form {
@@ -611,9 +700,9 @@ span {
 }
 
 .footer .social a:hover {
-    transform: scale(1.2)translateY(-10px);
+    transform: scale(1.02)translateY(-10px);
     background-color: var(--main-color);
-    color: black;
+    color: var(--bg-color);
     box-shadow: 0 0 25px var(--main-color);
 }
 
@@ -627,8 +716,8 @@ span {
 }
 
 .footer ul li a {
-    color: white;
-    border-bottom: 3px solid transparent;
+    color: var(--text-color);
+    border-bottom: 2px solid transparent;
     transition: 0.3s ease-in-out;
 }
 
@@ -647,7 +736,7 @@ span {
     margin-top: 50px;
     text-align: center;
     font-size: 16px;
-    color: white;
+    color: --text-color;
 }
 
 /*responsive tablet*/
@@ -661,7 +750,8 @@ span {
         grid-template-columns: repeat(2, 1fr);
         margin: 0 4rem;
     }
-    .testimonials .wrapper{
+
+    .testimonials .wrapper {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -681,96 +771,115 @@ span {
         left: 7px;
     }
 
-    .timeline-item:nth-child(odd){
+    .timeline-item:nth-child(odd) {
         padding-right: 0;
         text-align: left;
     }
+
     .timeline-item:nth-child(odd),
     .timeline-item:nth-child(even) {
         padding-left: 37px;
     }
-    .timeline-dot{
+
+    .timeline-dot {
         left: 0;
     }
-    .projects{
+
+    .projects {
         padding-bottom: 7rem;
     }
-    .testimonials .wrapper{
+
+    .testimonials .wrapper {
         grid-template-columns: repeat(1, 1fr);
     }
-    .contact form{
+
+    .contact form {
         flex-direction: column;
         align-items: center;
     }
-    .footer{
+
+    .footer {
         padding: 2rem 3%;
     }
 }
 
-@media(max-width: 895px){
-    #menu-icon{
+@media(max-width: 895px) {
+    #menu-icon {
         display: block;
     }
-    .navbar{
+
+    .navbar {
         position: absolute;
         height: 100vh;
         top: 100%;
         right: 0;
         width: 50%;
         padding: 1rem 3%;
-        background: rgba(0, 0, 0, 0.38);
-        backdrop-filter: blur(20);
+        background: var(--nav-color);
+        backdrop-filter: blur(20px);
         border-bottom-left-radius: 2rem;
         border-left: 2px solid var(--main-color);
         border-bottom: 2px solid var(--main-color);
         display: none;
     }
-    .navbar.active{
+
+    .navbar.active {
         display: block;
     }
-    .navbar a{
+
+    .navbar a {
         display: block;
         font-size: 2rem;
         margin: 3rem 0;
-        color: white;
+        color: var(--text-color);
     }
-    .home{
+
+    .home {
         flex-direction: column-reverse;
         margin: 3rem 2rem;
         gap: 5rem;
     }
-    .home-content h3{
+
+    .home-content h3 {
         font-size: 2.6rem;
     }
-    .home-content h1{
+
+    .home-content h1 {
         font-size: 8rem;
         margin-top: 2rem;
     }
-    .home-content p{
+
+    .home-content p {
         font-size: 1.6rem;
         max-width: 600px;
         margin: 0 auto;
     }
-    .home-img img{
+
+    .home-img img {
         width: 56vw;
-        opacity: .8;
     }
-    .projects h2{
+
+    .projects h2 {
         margin-bottom: 3rem;
     }
-    .projects-container{
+
+    .projects-container {
         grid-template-columns: repeat(1, 1fr);
     }
-    .education{
+
+    .education {
         margin-top: -70px;
     }
-    .projects{
+
+    .projects {
         margin-top: -120px;
     }
-    .testimonials{
+
+    .testimonials {
         margin-top: -120px;
     }
-    .contact{
+
+    .contact {
         margin-top: -50px;
     }
 
