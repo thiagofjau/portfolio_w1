@@ -1,3 +1,31 @@
+
+// //alternar tema
+// //variavel global, fora do escopo, inicio da tela
+// let dayTheme = false;
+
+// //funcao para alternar o tema claro e escuro
+// function toggleTheme() {
+//     let body = document.body;
+//     if (dayTheme) {
+//         body.classList.remove("day-theme");
+//     } else {
+//         body.classList.add("day-theme");
+//     }
+//     dayTheme = !dayTheme;
+// }
+
+
+
+//darkmode do zero yt
+const $html = document.querySelector('html')
+const $checkbox = document.querySelector('#switch')
+
+$checkbox.addEventListener('change', function(){
+    $html.classList.toggle('day-theme')
+})
+
+//menu toggle to hamburger
+//vars
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
 let sections = document.querySelectorAll('section');
