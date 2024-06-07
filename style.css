@@ -134,10 +134,10 @@ body {
     left: 4px;
     /*push ball from corner*/
     bottom: 4px;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color); 
     /*BALL COLOR*/
     -webkit-transition: .4s;
-    transition: .4s;
+    transition: .5s;
 }
 
 input:checked+.slider {
@@ -504,7 +504,7 @@ span {
 }
 
 /*RESIZE SOCIAL ICON*/
-.projects {
+/* .projects {
     background-color: var(--bg-color);
     color: var(--bg-color);
 }
@@ -531,7 +531,7 @@ span {
 }
 
 .project-box:hover {
-    background-color: --text-color;
+    background-color: var(--text-color);
     color: var(--bg-color);
     border: 5px solid var(--main-color);
     transform: scale(1.03);
@@ -558,7 +558,7 @@ span {
     max-height: 100px;
     line-height: 1.7;
     margin: auto;
-}
+} */
 
 .testimonials {
     background-color: var(--second-bg-color);
@@ -588,6 +588,10 @@ span {
     grid-template-columns: repeat(3, 1fr);
     gap: 3rem;
 }
+.testimonial-item a{
+    color: var(--text-color);
+    /* padding: 5px; */
+}
 
 .testimonial-item {
     min-height: 450px;
@@ -596,14 +600,13 @@ span {
     border: 2px solid var(--main-color);
     border-radius: 2rem;
     padding: 15px 25px;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 1.5rem;
-    color: --text-color;
+    /* color: var(--text-color); doesn't matter */
     transition: 0.4s ease-in-out;
 }
 
@@ -754,6 +757,13 @@ span {
     .testimonials .wrapper {
         grid-template-columns: repeat(2, 1fr);
     }
+    .testimonial-item p{
+        font-size: 1.8rem;
+    }
+    .testimonial-item a{
+        font-size: x-large;
+        padding: 30px;
+    }
 
 }
 
@@ -816,7 +826,7 @@ span {
         width: 50%;
         padding: 1rem 3%;
         background: var(--nav-color);
-        backdrop-filter: blur(20px);
+        backdrop-filter: blur(4px);
         border-bottom-left-radius: 2rem;
         border-left: 2px solid var(--main-color);
         border-bottom: 2px solid var(--main-color);
@@ -881,6 +891,9 @@ span {
 
     .contact {
         margin-top: -50px;
+    }
+    .footer ul {
+        font-size: 15px;
     }
 
 }
