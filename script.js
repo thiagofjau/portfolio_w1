@@ -1,22 +1,4 @@
-
-// //alternar tema
-// //variavel global, fora do escopo, inicio da tela
-// let dayTheme = false;
-
-// //funcao para alternar o tema claro e escuro
-// function toggleTheme() {
-//     let body = document.body;
-//     if (dayTheme) {
-//         body.classList.remove("day-theme");
-//     } else {
-//         body.classList.add("day-theme");
-//     }
-//     dayTheme = !dayTheme;
-// }
-
-
-
-//darkmode do zero yt
+//darkmode
 const $html = document.querySelector('html')
 const $checkbox = document.querySelector('#switch')
 
