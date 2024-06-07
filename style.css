@@ -314,7 +314,7 @@ span {
 }
 
 .text-animation span::before {
-    content: "Web Developer";
+    content: "Frontend Developer";
     color: var(--main-color);
     animation: words 20s infinite;
 }
@@ -340,7 +340,7 @@ span {
 
     0%,
     20% {
-        content: "Frontend Developer";
+        content: "Web Developer";
     }
 
     21%,
