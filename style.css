@@ -29,12 +29,15 @@
 
 html {
     font-size: 60%;
-    /* overflow: hidden; */
+    overflow: auto;
+    scrollbar-color: var(--main-color) grey;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
+   
+
 }
 
 .header {
@@ -480,13 +483,13 @@ span {
 }
 
 .timeline-content p {
-    color: --text-color;
+    color: var(--text-color);
     font-size: 16px;
     font-weight: 300;
     line-height: 22px;
 }
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     width: 10px;
 }
 
@@ -497,7 +500,7 @@ span {
 ::-webkit-scrollbar-track {
     background-color: grey;
     width: 50px;
-}
+} */
 
 .bx {
     font-size: larger;
@@ -668,6 +671,15 @@ span {
     /*0 equalizes text bar width*/
     resize: none;
 }
+
+/* Chrome, Safari, Edge, Opera */
+.hide-arrow-number::-webkit-outer-spin-button,
+.hide-arrow-number::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
 
 .contact-form .btn {
     margin-top: 2rem;
